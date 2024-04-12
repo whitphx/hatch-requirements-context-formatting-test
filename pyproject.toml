@@ -34,6 +34,12 @@ Source = "https://github.com/unknown/hatch-requirements-context-formatting-test"
 [tool.hatch.version]
 path = "src/hatch_requirements_context_formatting_test/__about__.py"
 
+[tool.hatch.build.targets.foo]
+path = "src/hatch-foo-builder"
+dependencies = [
+  "hatch-foo-builder @ {root:uri}/../src/hatch_foo_builder"
+]
+
 [tool.hatch.envs.default]
 dependencies = [
   "coverage[toml]>=6.5",
